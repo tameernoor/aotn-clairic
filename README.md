@@ -7,6 +7,8 @@ It shows two ways to combine Cloudflare's System One models. Clairic extracts ty
 - **Disputes.** A debt collector's staff read every incoming email. In Norway a disputed claim (*omtvistet krav*) can't continue through ordinary collection, so the helper flags the emails that look like a dispute.
 - **Invoices.** Clairic reads a photo of an invoice, and the code decides whether it is ready to pay.
 
+![How the dispute example fits together](assets/architecture.jpg)
+
 ## Set up Cloudflare
 
 1. Log in at dash.cloudflare.com. Your account ID is the long string in the address bar, `dash.cloudflare.com/<account-id>/...`.
