@@ -120,7 +120,7 @@ fn invoices(client: &Client, photos: Files, key: Key, out: &mut fs::File) -> Res
             // Every other key in the expected record is a field to read exactly.
             for (field, expected) in want.as_object().into_iter().flatten().filter(|(f, _)| *f != "ready") {
                 let Some(fact) = inv.facts.get(field.as_str()) else {
-                    println!("    {field}: not a field the invoice reader extracts, check key.json");
+                    println!("    {field}: not a field the invoice example extracts, check key.json");
                     continue;
                 };
                 let got = &fact.value;

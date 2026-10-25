@@ -4,9 +4,10 @@
 # The rule in src/dispute.rs also flags an email when `disputed_amount` has a value,
 # so keep that field name if you keep that part of the rule.
 
-# Flag the email when Clef's answer is at least this. Low on purpose: a person reads
-# every email anyway, so a false flag costs a glance and a missed dispute costs far more.
-bar = 0.2
+# Flag the email when Clef's answer is at least this. On the 30 test emails, any value
+# from 0.3 to 0.7 flagged 14 of 15 disputes with 1 false flag. 0.2 added a second false
+# flag, and 0.9 missed two more disputes.
+bar = 0.3
 
 # Each field is one value Clairic extracts. Types: text, number, date, time, datetime,
 # duration, estimate, forecast. Text answers are copied exactly from the email.

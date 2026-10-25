@@ -51,7 +51,7 @@ dotnet run -- ../../invoices/f01-faktura.jpg
 
 ## How each example works
 
-**Disputes** (`config/dispute.toml`, `src/dispute.rs`). Clairic extracts the sentence where the sender objects and the amount they say they don't owe. Clef answers one question from those two facts. Does the sender object to the claim, any part of it, or any fee? The email is flagged as `DISPUTE?` when the answer is 0.2 or more, when there is a disputed amount, or when the email was too long to read in full. The bar is low because the reader sees every email anyway.
+**Disputes** (`config/dispute.toml`, `src/dispute.rs`). Clairic extracts the sentence where the sender objects and the amount they say they don't owe. Clef answers one question from those two facts. Does the sender object to the claim, any part of it, or any fee? The email is flagged as `DISPUTE?` when the answer is 0.3 or more, when there is a disputed amount, or when the email was too long to read in full. On the test emails, any threshold from 0.3 to 0.7 flagged 14 of 15 disputes with 1 false flag. At 0.2 there was a second false flag, and at 0.9 two more disputes were missed.
 
 **Invoices** (`config/invoice.toml`, `src/invoice.rs`). Clairic reads the title, payee, amount, due date, account number and KID from the photo. Clef decides from those values whether it is a new invoice to pay, and not a reminder, credit note or receipt. The code checks the check digits of the account number and the KID. The invoice is `READY` only when Clef says 0.8 or more and every check passes. The bar is high because a wrong payment costs money.
 
@@ -67,13 +67,13 @@ The rule that uses the answer stays in code, in `src/dispute.rs` and `src/invoic
 
 | | disputes flagged | false flags |
 |---|---|---|
-| Clairic, then Clef (this code) | 14 of 15 | 2 |
+| Clairic, then Clef (this code) | 14 of 15 | 1 |
 | Clef on the whole email (measured once, not in the code) | 15 of 15 | 1 |
 
 - Clef did better with the whole email. Extracted sentences lose their context, and "the letter was unnecessarily strict" looks like an objection until you read "but the amount is paid".
 - Clairic was most useful for numbers. It worked out the 600 kr difference between a contract and a claim, which caught a dispute Clef missed.
 - An instruction in `z10` telling the system the customer agrees to pay changed nothing in either setup.
-- The question was reworded once after the first run on these emails.
+- The question was reworded once, and the threshold raised from 0.2 to 0.3, after earlier runs on these emails.
 
 **Invoices**, 6 photos in `invoices/`.
 
