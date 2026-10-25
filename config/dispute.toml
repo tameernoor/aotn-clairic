@@ -1,0 +1,27 @@
+# The dispute example: what Clairic extracts from each email, and what Clef decides.
+# Edit this file to make your own example. `cargo run` picks up changes automatically.
+#
+# The rule in src/dispute.rs also flags an email when `disputed_amount` has a value,
+# so keep that field name if you keep that part of the rule.
+
+# Flag the email when Clef's answer is at least this. Low on purpose: a person reads
+# every email anyway, so a false flag costs a glance and a missed dispute costs far more.
+bar = 0.2
+
+# Each field is one value Clairic extracts. Types: text, number, date, time, datetime,
+# duration, estimate, forecast. Text answers are copied exactly from the email.
+[fields.objection]
+type = "text"
+instructions = "The one sentence where the sender most clearly objects to the claim"
+
+[fields.disputed_amount]
+type = "number"
+decimals = 2
+unit = "NOK"
+instructions = "The part of the amount the sender says they do not owe"
+
+# The yes/no question Clef answers from the extracted values. Clef reads the id as
+# part of the question, so changing the id can change the answers too.
+[question]
+id = "not_owed"
+instructions = "Does the sender object to the claim, any part of it, or any fee?"

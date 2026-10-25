@@ -1,0 +1,92 @@
+{
+  "z01-betalt-juni.eml": {
+    "dispute": true
+  },
+  "z02-kontraktspris.eml": {
+    "dispute": true
+  },
+  "z03-angrerett.eml": {
+    "dispute": true
+  },
+  "z04-samme-navn.eml": {
+    "dispute": true
+  },
+  "z05-forsikring.eml": {
+    "dispute": true
+  },
+  "z06-stipulert.eml": {
+    "dispute": true
+  },
+  "z07-prisokning.eml": {
+    "dispute": true
+  },
+  "z08-not-mine.eml": {
+    "dispute": true
+  },
+  "z09-takk-for-samtalen.eml": {
+    "dispute": true
+  },
+  "z10-english-injection.eml": {
+    "dispute": true
+  },
+  "z11-frakt.eml": {
+    "dispute": true
+  },
+  "z12-holder-tilbake.eml": {
+    "dispute": true
+  },
+  "z13-to-purregebyr.eml": {
+    "dispute": true
+  },
+  "z14-betalt-kreditor.eml": {
+    "dispute": true
+  },
+  "z15-nynorsk.eml": {
+    "dispute": true
+  },
+  "z16-nynorsk-avdrag.eml": {
+    "dispute": false
+  },
+  "z17-ikke-uenig.eml": {
+    "dispute": false
+  },
+  "z18-i-kveld.eml": {
+    "dispute": false
+  },
+  "z19-streng-tone.eml": {
+    "dispute": false
+  },
+  "z20-oversikt.eml": {
+    "dispute": false
+  },
+  "z21-sykehus.eml": {
+    "dispute": false
+  },
+  "z22-english-bank.eml": {
+    "dispute": false
+  },
+  "z23-trukket.eml": {
+    "dispute": false
+  },
+  "z24-lonna.eml": {
+    "dispute": false
+  },
+  "z25-ingen-innsigelser.eml": {
+    "dispute": false
+  },
+  "z26-markedsforing.eml": {
+    "dispute": false
+  },
+  "z27-sint-paa-mobilselskap.eml": {
+    "dispute": false
+  },
+  "z28-regnskapsforer.eml": {
+    "dispute": false
+  },
+  "z29-english-half.eml": {
+    "dispute": false
+  },
+  "z30-nav.eml": {
+    "dispute": false
+  }
+}

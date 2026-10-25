@@ -1,0 +1,5 @@
+/target
+/out
+.env
+examples/dotnet/bin
+examples/dotnet/obj

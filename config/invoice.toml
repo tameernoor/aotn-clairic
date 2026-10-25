@@ -1,0 +1,43 @@
+# The invoice example: what Clairic reads from a photo of an invoice, and what Clef decides.
+# Edit this file to make your own example. `cargo run` picks up changes automatically.
+#
+# The checks in src/invoice.rs use `amount_due`, `due_date`, `account_number` and `kid`,
+# so keep those field names if you keep the checks.
+
+# Mark the invoice ready to pay only when Clef's answer is at least this and every check
+# passes. High on purpose: a wrong payment costs money and is hard to undo.
+bar = 0.8
+
+# Each field is one value Clairic reads from the photo. Types: text, number, date, time,
+# datetime, duration, estimate, forecast.
+[fields.document_title]
+type = "text"
+instructions = "The title of the document, such as Faktura, Purring, Kreditnota or Kvittering"
+
+[fields.payee]
+type = "text"
+instructions = "Who the money should be paid to"
+
+[fields.amount_due]
+type = "number"
+decimals = 2
+unit = "NOK"
+instructions = "The amount to pay"
+
+[fields.due_date]
+type = "date"
+instructions = "The due date for the payment"
+
+[fields.account_number]
+type = "text"
+instructions = "The bank account number to pay to"
+
+[fields.kid]
+type = "text"
+instructions = "The KID number for the payment"
+
+# The yes/no question Clef answers from the values read. Clef reads the id as part of
+# the question, so changing the id can change the answers too.
+[question]
+id = "new_invoice"
+instructions = "Is this a new invoice that should be paid, and not a reminder, a credit note or a receipt?"

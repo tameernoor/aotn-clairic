@@ -1,0 +1,8 @@
+{
+  "f01-faktura.jpg": {"ready": true, "amount_due": 1248.5, "due_date": "2026-11-20", "account_number": "15032748594", "kid": "0001234566"},
+  "f02-feil-konto.jpg": {"ready": false, "amount_due": 8750, "due_date": "2026-11-25", "account_number": "97100512348", "kid": "2300471188"},
+  "f03-purring.jpg": {"ready": false, "amount_due": 634, "due_date": "2026-11-10", "account_number": "30002218778", "kid": "8100933558"},
+  "f04-kreditnota.jpg": {"ready": false},
+  "f05-feil-kid.jpg": {"ready": false, "amount_due": 1150, "due_date": "2026-11-30", "account_number": "60481120937", "kid": "2300471189"},
+  "f06-kvittering.jpg": {"ready": false}
+}
